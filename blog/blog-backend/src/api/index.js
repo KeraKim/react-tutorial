@@ -1,7 +1,10 @@
-const Router = require('koa-router');
-const api = new Router();
+// const Router = require('koa-router');
+// const api = new Router();
 
-const posts = require('./posts')
+import Routers from 'koa-router'
+import posts from "./posts";
+
+const api = new Routers()
 
 api.use('/posts', posts.routes())
 
@@ -9,4 +12,4 @@ api.use('/posts', posts.routes())
 //   ctx.body = 'test 성공';
 // });
 
-module.exports = api;
+export default api
